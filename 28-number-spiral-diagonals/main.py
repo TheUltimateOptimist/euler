@@ -21,4 +21,9 @@ def diagonal_sum(width: int) -> int:
                 return diagonal + 1
         steps += 1
 
-print(f"The diagonal sum with a width of 1001 is:\n{diagonal_sum(1001)}")
+@timing
+def analytical(width: int) -> int:
+    return (4*width**3 + 3*width**2 + 8*width - 15) // 6 + 1
+
+diagonal_sum(1001)
+print(f"The diagonal sum with a width of 1001 is:\n{analytical(1001)}")
